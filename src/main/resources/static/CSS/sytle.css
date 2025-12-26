@@ -1,33 +1,19 @@
-body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple Gradient */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 2rem;
+.photo-frame {
+    margin: 20px 0;
+    border: 5px solid white;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
 }
 
-button {
-    background-color: #ff4757;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+.photo-frame:hover {
+    transform: scale(1.02) rotate(1deg);
 }
 
-button:hover {
-    background-color: #e84118;
-    transform: scale(1.05);
+.main-photo {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    height: auto;
 }

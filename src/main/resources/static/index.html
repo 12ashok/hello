@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Boot Live</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <div class="glass-card">
-        <div class="status-dot"></div>
-        <h1>Deployment Successful!</h1>
-        <p>Your Spring Boot app is live on EC2.</p>
-        
-        <div class="image-container">
-            <img src="/images/app-logo.png" alt="App Logo" onerror="this.src='https://via.placeholder.com/100'">
-        </div>
-
-        <button id="colorBtn">Change Theme</button>
+<div class="glass-card">
+    <h1>My Creative Gallery</h1>
+    
+    <div class="photo-frame">
+        <img src="/images/nature.jpg" alt="Beautiful Landscape" class="main-photo">
     </div>
 
-    <script src="/js/script.js"></script>
-</body>
-</html>
+    <p>Served by Spring Boot on AWS EC2</p>
+    
+    <button id="colorBtn">Change Theme</button>
+</div>
