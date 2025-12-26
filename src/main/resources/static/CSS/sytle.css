@@ -1,19 +1,23 @@
-.photo-frame {
-    margin: 20px 0;
-    border: 5px solid white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+body {
+    margin: 0;
+    padding: 0;
+    /* This makes the image cover the whole screen */
+    background: url('/images/nature.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
 }
 
-.photo-frame:hover {
-    transform: scale(1.02) rotate(1deg);
-}
-
-.main-photo {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    height: auto;
+.glass-card {
+    /* Adding transparency so the photo shows through the card */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
