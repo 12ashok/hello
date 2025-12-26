@@ -1,56 +1,59 @@
-body {
-    margin: 0;
-    padding: 0;
-    /* 1. Set the background image */
-    background: url('/images/nature.jpg') no-repeat center center fixed; 
-    
-    /* 2. Ensure it covers the whole screen */
-    background-size: cover; 
-    
-    /* 3. Center the content card */
+/* Container for the image and text */
+.hero-image-wrapper {
+    position: relative; /* Required for absolute children */
+    width: 100%;
+    height: 80vh; /* Increased height for a more dramatic look */
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dark overlay to make text pop */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens the image by 40% */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
 }
 
-/* 4. The Content Card (The "Glass" effect) */
-.glass-card {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    backdrop-filter: blur(10px);    /* Blurs the background behind the card */
-    padding: 50px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.hero-content {
     text-align: center;
-    color: white;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    max-width: 500px;
+    color: white; /* Text is now white to contrast with the dark overlay */
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Adds depth to text */
 }
 
 p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
 }
 
 .main-btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #ff4757;
+    background-color: #ff4757;
     color: white;
     border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
     border-radius: 50px;
     cursor: pointer;
-    font-weight: bold;
     transition: 0.3s;
 }
 
 .main-btn:hover {
-    background: #ff6b81;
-    transform: scale(1.05);
+    background-color: #ff6b81;
+    transform: translateY(-3px);
 }
