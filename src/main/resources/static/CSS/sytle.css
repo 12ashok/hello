@@ -1,23 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f0f2f5; /* Light gray background */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 50px;
+    border-top: 8px solid #007bff; /* Bright blue accent */
 }
 
 h1 {
-    color: #2c3e50;
+    color: #333;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #3498db;
+.btn {
+    background-color: #28a745; /* Success Green */
     color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #2980b9;
+.btn:hover {
+    background-color: #218838;
 }
