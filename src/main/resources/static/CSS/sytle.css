@@ -1,28 +1,19 @@
 .tools-navbar {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 50px;
+    display: flex;             /* Horizontal layout */
+    justify-content: center;   /* Center items */
+    gap: 25px;                 /* Space between links */
     margin-bottom: 30px;
-    backdrop-filter: blur(5px);
 }
 
-.tool-item {
-    cursor: pointer;
+.tool-link {
+    text-decoration: none;
     text-align: center;
-    transition: transform 0.3s ease;
     color: white;
 }
 
-.tool-item:hover {
-    transform: translateY(-5px);
-}
-
-.tool-item img {
-    width: 50px; /* Resize your logos here */
-    height: 50px;
+.tool-link img {
+    width: 40px;
+    height: 40px;
     display: block;
-    margin: 0 auto 5px;
+    margin: 0 auto;
 }
