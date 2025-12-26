@@ -30,4 +30,4 @@ function displayQuestion() {
         qEl.innerText = "No questions in this category yet!";
     }
 }
-// Keep your Show/Next button listeners but point them to displayQuestion()
+// Keep your Show/Next button listeners but point them to displayQuestion()s
