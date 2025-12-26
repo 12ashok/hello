@@ -6,17 +6,17 @@ body {
 }
 
 .hero-container {
-    width: 70%;
+    width: 50%;
 }
 
 .hero-image-wrapper {
-    width: 70%;
+    width: 50%;
     height: 250vh; /* Takes up 50% of the screen height */
     overflow: hidden;
 }
 
 .hero-img {
-    width: 75%;
+    width: 40%;
     height: 50%;
     object-fit: cover; /* This makes sure the image fills the area without stretching */
     display: block;
