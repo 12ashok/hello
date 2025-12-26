@@ -1,18 +1,5 @@
-# Use official Tomcat image
-FROM tomcat:9.0-jdk11
-
-# Remove default apps (optional, clean Tomcat)
-RUN rm -rf /usr/local/tomcat/webapps/*
-
-# Copy your WAR file to Tomcat's webapps folder as ROOT.war
-COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
-
-# Change Tomcat port from 8080 to 8090
-RUN sed -i 's/port="8080"/port="8090"/' /usr/local/tomcat/conf/server.xml
-
-# Expose the new port
-EXPOSE 8090
-
-# Start Tomcat
-CMD ["catalina.sh", "run"]
-
+FROM openjdk:11-jre-slim
+# Copy the file
+COPY target/*.war app.war
+# Run the application directly using Java
+ENTRYPOINT ["java", "-jar", "app.war", "--server.port=80"]
