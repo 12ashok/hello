@@ -1,15 +1,25 @@
-<div class="glass-card">
-    <div class="profile-container">
-        <img src="/images/jenkins-logo.png" alt="DevOps Tool" class="profile-img">
+<div class="tools-navbar">
+    <div class="tool-item" onclick="filterQuestions('git')">
+        <img src="/images/git-logo.png" alt="Git">
+        <span>Git</span>
     </div>
-    
-    <h1 id="question">What is a Jenkins Pipeline?</h1>
-    <p id="answer" style="display: none; margin-top: 20px; font-style: italic; color: #ffd700;">
-        "A suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins."
-    </p>
+    <div class="tool-item" onclick="filterQuestions('docker')">
+        <img src="/images/docker-logo.png" alt="Docker">
+        <span>Docker</span>
+    </div>
+    <div class="tool-item" onclick="filterQuestions('jenkins')">
+        <img src="/images/jenkins-logo.png" alt="Jenkins">
+        <span>Jenkins</span>
+    </div>
+</div>
+
+<div class="glass-card">
+    <h2 id="category-title">All Questions</h2>
+    <h1 id="question">Select a tool to start the interview!</h1>
+    <p id="answer" style="display: none;"></p>
     
     <div class="button-group">
         <button id="showBtn" class="main-btn">Show Answer</button>
-        <button id="nextBtn" class="main-btn" style="background: #23d5ab;">Next Question</button>
+        <button id="nextBtn" class="main-btn">Next</button>
     </div>
 </div>

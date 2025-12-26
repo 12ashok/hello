@@ -1,52 +1,33 @@
-const questions = [
-    {
-        q: "What is the main advantage of Docker?",
-        a: "It provides 'Isolation' and 'Consistency'. It ensures that the app runs the same way on a developer's laptop as it does on AWS EC2.",
-        img: "/images/docker.png"
-    },
-    {
-        q: "What is a Jenkins Pipeline?",
-        a: "It is a suite of plugins that allows you to define your build process (Build, Test, Deploy) as Code (Jenkinsfile).",
-        img: "/images/jenkins.png"
-    },
-    {
-        q: "What is 'CI/CD'?",
-        a: "Continuous Integration (automated testing) and Continuous Deployment (automated release to production).",
-        img: "/images/cicd.png"
-    },
-    {
-        q: "Explain 'Infrastructure as Code' (IaC).",
-        a: "Managing and provisioning infrastructure through machine-readable definition files (like Terraform or CloudFormation) rather than manual hardware configuration.",
-        img: "/images/iac.png"
-    },
-    {
-        q: "What is the role of a Port in Docker?",
-        a: "It maps the container's internal port (e.g., 8080) to the EC2 host's port so users can access the app via the IP address.",
-        img: "/images/ports.png"
-    },
-    {
-        q: "What is 'Configuration Management'?",
-        a: "Automating the setup and maintenance of software on servers. Common tools include Ansible, Chef, and Puppet.",
-        img: "/images/ansible.png"
-    },
-    {
-        q: "What is a 'Blue-Green Deployment'?",
-        a: "A strategy where you have two identical production environments. You only route traffic to one (Green) while updating the other (Blue) to reduce downtime.",
-        img: "/images/bluegreen.png"
-    },
-    {
-        q: "What is the difference between a Container and a VM?",
-        a: "Containers share the host OS kernel and are lightweight, while VMs include a full guest OS and are much heavier.",
-        img: "/images/vm-vs-container.png"
-    },
-    {
-        q: "What is the 'Shift Left' principle?",
-        a: "It means moving testing, security, and quality checks earlier in the development process to find bugs sooner.",
-        img: "/images/shift-left.png"
-    },
-    {
-        q: "What is 'Observability' in DevOps?",
-        a: "The ability to measure the internal state of a system by looking at its outputs, usually through Logs, Metrics, and Traces.",
-        img: "/images/monitoring.png"
-    }
+const allQuestions = [
+    { category: 'git', q: "What is a 'git merge'?", a: "Combining multiple sequences of commits into one unified history.", img: "/images/git.png" },
+    { category: 'git', q: "Difference between 'git fetch' and 'git pull'?", a: "Fetch gets changes from remote but doesn't merge; Pull gets changes and merges immediately.", img: "/images/git.png" },
+    { category: 'docker', q: "What is a Dockerfile?", a: "A text document that contains all the commands a user could call on the command line to assemble an image.", img: "/images/docker.png" },
+    // ... add more questions here
 ];
+
+let currentQuestions = [...allQuestions];
+let currentIndex = 0;
+
+function filterQuestions(category) {
+    // 1. Filter the list
+    currentQuestions = allQuestions.filter(item => item.category === category);
+    currentIndex = 0;
+    
+    // 2. Update UI
+    document.getElementById('category-title').innerText = category.toUpperCase() + " Interview";
+    displayQuestion();
+}
+
+function displayQuestion() {
+    const qEl = document.getElementById('question');
+    const aEl = document.getElementById('answer');
+    
+    if (currentQuestions.length > 0) {
+        qEl.innerText = currentQuestions[currentIndex].q;
+        aEl.innerText = currentQuestions[currentIndex].a;
+        aEl.style.display = 'none';
+    } else {
+        qEl.innerText = "No questions in this category yet!";
+    }
+}
+// Keep your Show/Next button listeners but point them to displayQuestion()

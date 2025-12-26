@@ -1,18 +1,28 @@
-.glass-card {
-    background: rgba(15, 15, 15, 0.85); /* Darker background */
-    border: 2px solid #32cd32; /* Lime green border for a "Terminal" look */
-    max-width: 600px;
-    padding: 40px;
+.tools-navbar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
 }
 
-#question {
-    color: #32cd32; /* Hacker green */
-    font-family: 'Courier New', Courier, monospace;
+.tool-item {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: white;
 }
 
-#answer {
-    background: #222;
-    padding: 15px;
-    border-left: 4px solid #007bff;
-    margin-top: 20px;
+.tool-item:hover {
+    transform: translateY(-5px);
 }
+
+.tool-item img {
+    width: 50px; /* Resize your logos here */
+    height: 50px;
+    display: block;
+    margin: 0 auto 5px;
+}s
