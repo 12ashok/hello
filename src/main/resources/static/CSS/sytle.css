@@ -1,36 +1,33 @@
 body {
-    background-color: #f0f2f5; /* Light gray background */
-    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple Gradient */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
 }
 
-.main-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    border-top: 8px solid #007bff; /* Bright blue accent */
-}
-
-h1 {
+.card {
+    background: white;
     color: #333;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
-.btn {
-    background-color: #28a745; /* Success Green */
+button {
+    background-color: #ff4757;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    transition: 0.3s;
 }
 
-.btn:hover {
-    background-color: #218838;
+button:hover {
+    background-color: #e84118;
+    transform: scale(1.05);
 }
