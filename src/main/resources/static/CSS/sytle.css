@@ -1,55 +1,30 @@
-/* Remove default margins */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    padding: 0;
+    /* This points to your photo in the static/images folder */
+    background: url('/images/nature.jpg') no-repeat center center fixed; 
+    
+    /* This ensures the photo covers the entire screen without stretching */
+    background-size: cover; 
+    
+    /* Fallback color if image fails to load */
+    background-color: #2c3e50; 
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.hero-container {
-    width: 50%;
-}
-
-.hero-image-wrapper {
-    width: 50%;
-    height: 250vh; /* Takes up 50% of the screen height */
-    overflow: hidden;
-}
-
-.hero-img {
-    width: 40%;
-    height: 50%;
-    object-fit: cover; /* This makes sure the image fills the area without stretching */
-    display: block;
-}
-
-.hero-content {
+/* Add a semi-transparent card so your text is readable over the photo */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px); /* This creates a frosted glass effect */
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    padding: 40px 20px;
-    background: white;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #666;
-    font-size: 1.1rem;
-}
-
-.main-btn {
-    background-color: #007bff;
     color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.main-btn:hover {
-    background-color: #0056b3;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
