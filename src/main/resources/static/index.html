@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Colorful App</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot Live</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="main-container">
-        <h1>Hello from Spring Boot!</h1>
+    <div class="glass-card">
+        <div class="status-dot"></div>
+        <h1>Deployment Successful!</h1>
+        <p>Your Spring Boot app is live on EC2.</p>
         
-        <div class="image-box">
-            <img src="/images/logo.png" alt="My App Logo" width="200">
+        <div class="image-container">
+            <img src="/images/app-logo.png" alt="App Logo" onerror="this.src='https://via.placeholder.com/100'">
         </div>
 
-        <p>This page now has style and images.</p>
-        <button class="btn" onclick="showMessage()">Click Me</button>
+        <button id="colorBtn">Change Theme</button>
     </div>
 
     <script src="/js/script.js"></script>
 </body>
 </html>
-
