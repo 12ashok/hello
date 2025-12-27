@@ -1,30 +1,219 @@
-<nav class="tools-navbar">
-    <a href="javascript:void(0)" class="tool-link" onclick="filterQuestions('git')">
-        <img src="/images/git-logo.png" alt="Git"> 
-        <span>Git</span>
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Learning Lab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --git: #f05032;
+            --jenkins: #d24939;
+            --docker: #2496ed;
+            --ansible: #000000;
+        }
 
-    <a href="javascript:void(0)" class="tool-link" onclick="filterQuestions('jenkins')">
-        <img src="/images/jenkins-logo.png" alt="Jenkins">
-        <span>Jenkins</span>
-    </a>
-    
-    <a href="javascript:void(0)" class="tool-link" onclick="filterQuestions('docker')">
-        <img src="/images/docker-logo.png" alt="Docker">
-        <span>Docker</span>
-    </a>
-</nav>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            margin: 0;
+            color: var(--dark);
+        }
 
-<div class="glass-card">
-    <h3 id="category-title">All Questions</h3>
-    
-    <div class="question-container">
-        <h1 id="question">Select a tool to start the interview!</h1>
-        <p id="answer" style="display: none;" class="answer-text"></p>
+        header {
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Tool Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header i {
+            font-size: 2rem;
+        }
+
+        .git-icon { color: var(--git); }
+        .jenkins-icon { color: var(--jenkins); }
+        .docker-icon { color: var(--docker); }
+        .ansible-icon { color: var(--ansible); }
+
+        h2 { margin: 0; font-size: 1.5rem; }
+
+        ul {
+            padding-left: 1.2rem;
+            flex-grow: 1;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        /* Action Section */
+        .lab-actions {
+            margin-top: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-start { background-color: #22c55e; color: white; }
+        .btn-stop { background-color: #ef4444; color: white; }
+        .btn:hover { opacity: 0.9; }
+
+        input {
+            padding: 0.8rem;
+            width: 250px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DevOps Learning Hub</h1>
+    <p>Master the Modern CI/CD Stack</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <i class="fab fa-git-alt git-icon"></i>
+            <h2>Git</h2>
+        </div>
+        <ul>
+            <li><b>Version Control:</b> Track every change in your code history.</li>
+            <li><b>Branching:</b> Work on features safely without breaking Main.</li>
+            <li><b>Collaboration:</b> Merge code from multiple developers seamlessly.</li>
+        </ul>
     </div>
-    
-    <div class="button-group">
-        <button id="showBtn" class="main-btn">Show Answer</button>
-        <button id="nextBtn" class="main-btn">Next Question</button>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fab fa-jenkins jenkins-icon"></i>
+            <h2>Jenkins</h2>
+        </div>
+        <ul>
+            <li><b>Automation:</b> Automate Build, Test, and Deploy phases.</li>
+            <li><b>Pipelines:</b> Define workflow as code (Jenkinsfile).</li>
+            <li><b>Webhooks:</b> Trigger builds automatically on GitHub pushes.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fab fa-docker docker-icon"></i>
+            <h2>Docker</h2>
+        </div>
+        <ul>
+            <li><b>Containers:</b> Package app + dependencies into one unit.</li>
+            <li><b>Isolation:</b> Run apps in separate environments on one host.</li>
+            <li><b>Portability:</b> Works the same on Dev, QA, and Production.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-terminal ansible-icon"></i>
+            <h2>Ansible</h2>
+        </div>
+        <ul>
+            <li><b>Agentless:</b> Configure servers over SSH without extra software.</li>
+            <li><b>Playbooks:</b> Use YAML to describe server configurations.</li>
+            <li><b>Idempotency:</b> Ensure consistent states without duplicate errors.</li>
+        </ul>
     </div>
 </div>
+
+<div class="container">
+    <div class="lab-actions">
+        <h3>Ready to Practice?</h3>
+        <p>Enter your email to spin up a temporary Docker lab via Jenkins.</p>
+        <input type="email" id="userEmail" placeholder="Enter your email">
+        <br>
+        <button class="btn btn-start" onclick="handleLab('start')">Launch My Lab</button>
+        <button class="btn btn-stop" onclick="handleLab('stop')">Stop My Lab</button>
+        <p id="statusMessage" style="margin-top: 1rem; font-weight: bold;"></p>
+    </div>
+</div>
+
+<script>
+    async function handleLab(action) {
+        const email = document.getElementById('userEmail').value;
+        const status = document.getElementById('statusMessage');
+        
+        if (!email) {
+            alert("Please enter an email address");
+            return;
+        }
+
+        status.innerText = action === 'start' ? "🚀 Triggering Jenkins..." : "🧹 Cleaning up...";
+        
+        try {
+            // Replace with your actual Backend API URL that runs the Node.js script
+            // For now, we simulate the call
+            console.log(`${action === 'start' ? 'Starting' : 'Stopping'} lab for: ${email}`);
+            
+            // Artificial delay to mimic API call
+            setTimeout(() => {
+                status.style.color = action === 'start' ? "green" : "red";
+                status.innerText = action === 'start' ? "✅ Lab is building! Check your Jenkins Dashboard." : "✅ Cleanup request sent.";
+            }, 1500);
+
+        } catch (error) {
+            status.innerText = "❌ Error connecting to server.";
+        }
+    }
+</script>
+
+</body>
+</html>
