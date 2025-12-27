@@ -1,0 +1,19 @@
+.tools-navbar {
+    display: flex;             /* Horizontal layout */
+    justify-content: center;   /* Center items */
+    gap: 25px;                 /* Space between links */
+    margin-bottom: 30px;
+}
+
+.tool-link {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.tool-link img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+}
